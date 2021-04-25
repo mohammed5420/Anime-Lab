@@ -16,7 +16,6 @@ const Search = () => {
       .then(res => {
         setLoading(false);
         setSearch(res.data.results);
-        console.log(res.data.results);
         setLoading(true);
       })
       .catch(err => {
