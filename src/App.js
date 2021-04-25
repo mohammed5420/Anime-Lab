@@ -7,7 +7,7 @@ import Search from "./pages/Search";
 
 const App = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-6">
       <Switch>
         <Route path="/" exact>
           <Home />
