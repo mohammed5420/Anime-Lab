@@ -11,7 +11,7 @@ const AnimeCard = ({ anime, type }) => {
       key={`${type}${anime.mal_id}`}
       className={`block  flex-0 mb-4 md:mb-0 relative shadow-md w-52 h-80 bg-${
         randomColor[
-          Math.floor(Math.random() * (randomColor.length - 0 + 1)) + 0
+          Math.floor(Math.random() * randomColor.length)
         ]
       }-400  rounded-md overflow-hidden`}
     >
