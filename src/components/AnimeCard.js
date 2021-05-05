@@ -15,6 +15,7 @@ const AnimeCard = ({ anime, type }) => {
         ]
       }-400  rounded-md overflow-hidden`}
     >
+    {/* hello */}
       <img
         className="block object-cover"
         src={anime?.image_url}
