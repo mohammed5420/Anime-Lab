@@ -30,30 +30,32 @@ const AnimeDetail = ({ data }) => {
             <span className="text-lg font-bold">Type</span>{" "}
             <span className="bg-blue-200 text-gray-600 rounded-sm px-2  py-1">
               {data.type}
-            </span></p>
-            {data.type === "Manga" ? (
-              <div>
-                <p className="mb-3 ">
-                  <span className="text-lg font-bold">Chapters</span>{" "}
-                  <span className="bg-blue-200 text-gray-600 rounded-sm px-2 py-1">
-                    {data.chapters ? (data.chapters) : "1"}
-                  </span>
-                </p>
-                <p className="mb-3">
-                  <span className="text-lg font-bold">Volumes </span>
-                  <span className="bg-blue-200 text-gray-600 rounded-sm px-2  py-1">
-                     {data.volumes}
-                  </span>
-                </p>
-              </div>
-            ) : (
-              ""
-            )}
-          
+            </span>
+          </p>
+          {data.type === "Manga" ? (
+            <div>
+              <p className="mb-3 ">
+                <span className="text-lg font-bold">Chapters</span>{" "}
+                <span className="bg-blue-200 text-gray-600 rounded-sm px-2 py-1">
+                  {data.chapters ? data.chapters : "1"}
+                </span>
+              </p>
+              <p className="mb-3">
+                <span className="text-lg font-bold">Volumes </span>
+                <span className="bg-blue-200 text-gray-600 rounded-sm px-2  py-1">
+                  {data.volumes}
+                </span>
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
+
           <div className="max-w-screen-md">
             <h3 className="text-lg font-bold mb-3">Synopsis :</h3>
             <p className="text-gray-600 mb-3">
-              {data.synopsis && data.synopsis.replace("/<[^>]*>/g", "")}
+              {data.synopsis &&
+                data.synopsis.split("\n").join("").replace(/\\n/g, "")}
             </p>
           </div>
           <div>

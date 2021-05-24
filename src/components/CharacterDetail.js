@@ -3,6 +3,7 @@ import DataListUi from "./DataListUi";
 import AnimeCard from "./AnimeCard";
 
 const CharacterDetail = ({ character }) => {
+  window.r = character.about;
   return (
     <div className="max-w-screen-xl mx-auto pt-6 px-3 sm:px-4">
       <div className="md:flex  justify-start">
@@ -17,7 +18,8 @@ const CharacterDetail = ({ character }) => {
           </h2>
           <h3 className="text-lg font-bold mb-3">About</h3>
           <p className="text-gray-600 mb-3">
-            {character.about && character.about.replace("/<[^>]*>/g", "")}
+            {character.about &&
+              character.about.split("\n").join("").replace(/\\n/g, "")}
           </p>
           <h3 className="text-lg font-bold mb-3">Animography</h3>
           <div className="mb-3">
