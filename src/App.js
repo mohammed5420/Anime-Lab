@@ -1,34 +1,21 @@
 import React from "react";
-
-import { Route, Switch } from "react-router";
-import Details from "./pages/Details";
+import Footer from "./components/Footer";
+import { GlobalStyle } from "./components/GlobalStyle";
+import Projects from "./pages/Projects";
+import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Search from "./pages/Search";
-
-const App = () => {
+function App() {
   return (
-    <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-6">
-      <Switch >
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/search/:type/:query" exact>
-          <Search />
-        </Route>
-        <Route path="/:type/:id" exact>
-          <Details />
-        </Route>
+    <div className="App" style={{maxWidth: "1368px" , margin: "0 auto"}}>
+      <GlobalStyle />
+      
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/projects" component={Projects} />
       </Switch>
-      <div className="bg-red-400"></div>
-      <div className="bg-indigo-400"></div>
-      <div className="bg-gray-400"></div>
-      <div className="bg-blue-400"></div>
-      <div className="bg-yellow-400"></div>
-      <div className="bg-green-400"></div>
-      <div className="bg-purple-400"></div>
-      <div className="bg-pink-400"></div>
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;
